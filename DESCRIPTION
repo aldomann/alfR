@@ -1,0 +1,10 @@
+Package: alfR
+Type: Package
+Title: Useful (?) Misc Functions 
+Version: 0.1.0
+Author: Who wrote it
+Maintainer: Alfredo Hernández <aldomann.designs@gmail.com>
+Description: Right now it just contains a zug_zug() function for timing purposes when running long simulations.
+License: GPL3
+Encoding: UTF-8
+LazyData: true
