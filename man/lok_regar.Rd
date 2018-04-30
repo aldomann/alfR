@@ -10,7 +10,7 @@ lok_regar(call)
 \item{call}{Any (?) R call}
 }
 \description{
-This function is used to control execution time when running long simulations. Only GNU/Linux with libnotify is supported right now.
+This function is used to control execution time when running long simulations. Only GNU/Linux with libnotify macOS are supported right now.
 }
 \details{
 The function does the following things:

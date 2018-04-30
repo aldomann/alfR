@@ -1,6 +1,6 @@
 #' Ready for Orders (Lok-Regar)
 #'
-#' This function is used to control execution time when running long simulations. Only GNU/Linux with libnotify is supported right now.
+#' This function is used to control execution time when running long simulations. Only GNU/Linux with libnotify macOS are supported right now.
 #'
 #' The function does the following things:
 #'
@@ -24,6 +24,11 @@ lok_regar <- function(call) {
 	print(paste("Finished computation at", Sys.time()))
 
 	# Desktop/system commands
-	system("notify-send 'Finished calculations' 'Get back to work!' -i rstudio -u critical")
-	system("paplay /usr/share/sounds/freedesktop/stereo/complete.oga")
+	if (Sys.info()['sysname'] == "Linux") {
+		system("notify-send 'Finished calculations' 'Get back to work!' -i rstudio -u critical")
+		system("paplay /usr/share/sounds/freedesktop/stereo/complete.oga")
+	} else if (Sys.info()['sysname'] == "Darwin") {
+		system(paste('osascript -e',"'",'display notification "Get back to work!" with title "RStudio" subtitle "Finished calculations" sound name "Hero"',"'"))
+	}
+
 }
