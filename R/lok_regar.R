@@ -1,0 +1,29 @@
+#' Ready for Orders (Lok-Regar)
+#'
+#' This function is used to control execution time when running long simulations. Only GNU/Linux with libnotify is supported right now.
+#'
+#' The function does the following things:
+#'
+#' \itemize{
+#'   \item execute any R call
+#'   \item print the elapsed time to execute it
+#'   \item send a permanent desktop notification
+#'   \item emit a completion alert sound
+#' }
+#' @param call Any (?) R call
+#' @keywords system.time
+#' @export
+#' @examples
+#' lok_regar(print("hello world"))
+#' lok_regar(a <- seq(1:10000))
+
+lok_regar <- function(call) {
+	# R console commands
+	print(paste("Started computation at", Sys.time()))
+	print(system.time(call))
+	print(paste("Finished computation at", Sys.time()))
+
+	# Desktop/system commands
+	system("notify-send 'Finished calculations' 'Get back to work!' -i rstudio -u critical")
+	system("paplay /usr/share/sounds/freedesktop/stereo/complete.oga")
+}
