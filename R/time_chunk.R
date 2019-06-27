@@ -1,4 +1,4 @@
-#' Ready for Orders (Lok-Regar)
+#' Time chunk
 #'
 #' This function is used to control execution time when running long simulations. Only GNU/Linux with libnotify macOS are supported right now.
 #'
@@ -14,10 +14,10 @@
 #' @keywords system.time
 #' @export
 #' @examples
-#' lok_regar(print("hello world"))
-#' lok_regar(a <- seq(1:10000))
+#' time_chunk(print("hello world"))
+#' time_chunk(a <- seq(1:10000))
 
-lok_regar <- function(call) {
+time_chunk <- function(call) {
 	# R console commands
 	print(paste("Started computation at", Sys.time()))
 	print(system.time(call))
