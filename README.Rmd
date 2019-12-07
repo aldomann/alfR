@@ -1,0 +1,36 @@
+---
+output: github_document
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-"
+)
+```
+# alfR <img src="man/figures/logo.png" align="right" width="120" />
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+## Overview
+
+alfR is an R package with useful misc functions.
+
+## Installation
+
+<!-- You can install the released version of alfR from [CRAN](https://CRAN.R-project.org) with: -->
+
+<!-- ``` r -->
+<!-- install.packages("alfR") -->
+<!-- ``` -->
+
+<!-- And  -->
+The development version from [GitHub](https://github.com/) with:
+
+``` r
+# install.packages("devtools")
+devtools::install_github("aldomann/alfR")
+```
+<!-- ## Examples -->
