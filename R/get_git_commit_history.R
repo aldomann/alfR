@@ -4,23 +4,25 @@
 #'
 #' @param from Starting date
 #' @param to Ending date
+#' @param author Optional author of the commits
 #' @param raw Whether the output is a raw string vector (TRUE), or a data frame (FALSE)
+#'
 #' @keywords git
 #' @export
 #' @examples
 #' get_git_commit_history("2019-06-01")
-#'
 #' @import dplyr
 #' @import tidyr
 
-get_git_commit_history <- function(from, to = Sys.Date(), raw = FALSE) {
+get_git_commit_history <- function(from, to = Sys.Date(), author = NULL, raw = FALSE) {
   git_commits <- system(
     paste(
       "git log",
-          "--since", lubridate::as_date(from) - 1,
-          "--until", to,
-          "--reverse",
-          "--pretty='%Cgreen %cI ## %Creset %s'"
+      ifelse(is.null(author), "", paste("--author", author)),
+      "--since", lubridate::as_date(from) - 1,
+      "--until", to,
+      "--reverse",
+      "--pretty='%Cgreen %cI ## %Creset %s'"
     ),
     intern = TRUE
   )

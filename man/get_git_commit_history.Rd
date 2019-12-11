@@ -4,12 +4,14 @@
 \alias{get_git_commit_history}
 \title{Get Git commit history}
 \usage{
-get_git_commit_history(from, to = Sys.Date(), raw = FALSE)
+get_git_commit_history(from, to = Sys.Date(), author = NULL, raw = FALSE)
 }
 \arguments{
 \item{from}{Starting date}
 
 \item{to}{Ending date}
+
+\item{author}{Optional author of the commits}
 
 \item{raw}{Whether the output is a raw string vector (TRUE), or a data frame (FALSE)}
 }
@@ -18,6 +20,5 @@ Get your Git commit history as a data frame or raw text between two specified da
 }
 \examples{
 get_git_commit_history("2019-06-01")
-
 }
 \keyword{git}
