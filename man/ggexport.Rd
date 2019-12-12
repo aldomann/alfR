@@ -4,8 +4,7 @@
 \alias{ggexport}
 \title{Simpler ggsave with useful defaults}
 \usage{
-ggexport(filename, size = "medium", dpi = 96, font = NULL,
-  extension = "pdf")
+ggexport(filename, size = "medium", dpi = 96, font = NULL, extension = "pdf")
 }
 \arguments{
 \item{filename}{Destination path of the exported plot}
@@ -20,18 +19,5 @@ ggexport(filename, size = "medium", dpi = 96, font = NULL,
 }
 \description{
 Alternative implementation of ggsave (from ggplot2 package) with nice defaults. Only GNU/Linux with libnotify macOS are supported right now.
-}
-\details{
-The function does the following things:
-
-\itemize{
-  \item execute any R call
-  \item print the elapsed time to execute it
-  \item send a permanent desktop notification
-  \item emit a completion alert sound
-}
-}
-\examples{
-
 }
 \keyword{system.time}

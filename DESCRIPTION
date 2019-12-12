@@ -15,6 +15,7 @@ Imports:
     dplyr,
     extrafont,
     ggplot2,
+    grDevices,
     lubridate,
     tidyr
 Encoding: UTF-8
