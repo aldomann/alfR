@@ -28,10 +28,10 @@ get_git_commit_history <- function(from, to = Sys.Date(), author = NULL, raw = F
   )
 
   if (!raw) {
-    git_commits <- git_commits %>%
-      data.frame() %>%
-      `colnames<-`("lines") %>%
-      tidyr::separate(lines, c("date", "message"), sep = "##") %>%
+    git_commits <- data.frame(
+      lines = git_commits
+    ) %>%
+      tidyr::separate("lines", c("date", "message"), sep = "##") %>%
       dplyr::mutate(
         date = lubridate::ymd_hms(date)
       )
