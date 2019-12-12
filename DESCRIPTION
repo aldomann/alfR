@@ -1,7 +1,7 @@
 Type: Package
 Package: alfR
 Title: Useful (?) Misc Functions
-Version: 0.3.1.9000
+Version: 0.3.2
 Authors@R:
     person(given = "Alfredo",
            family = "Hernández",
@@ -17,7 +17,8 @@ Imports:
     ggplot2,
     grDevices,
     lubridate,
-    tidyr
+    tidyr,
+    stringr
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 7.0.2
