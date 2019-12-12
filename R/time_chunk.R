@@ -16,19 +16,17 @@
 #' @examples
 #' time_chunk(print("hello world"))
 #' time_chunk(a <- seq(1:10000))
-
 time_chunk <- function(call) {
-	# R console commands
-	print(paste("Started computation at", Sys.time()))
-	print(system.time(call))
-	print(paste("Finished computation at", Sys.time()))
+  # R console commands
+  print(paste("Started computation at", Sys.time()))
+  print(system.time(call))
+  print(paste("Finished computation at", Sys.time()))
 
-	# Desktop/system commands
-	if (Sys.info()['sysname'] == "Linux") {
-		system("notify-send 'Finished calculations' 'Get back to work!' -i rstudio -u critical")
-		system("paplay /usr/share/sounds/freedesktop/stereo/complete.oga")
-	} else if (Sys.info()['sysname'] == "Darwin") {
-		system(paste('osascript -e',"'",'display notification "Get back to work!" with title "RStudio" subtitle "Finished calculations" sound name "Hero"',"'"))
-	}
-
+  # Desktop/system commands
+  if (Sys.info()["sysname"] == "Linux") {
+    system("notify-send 'Finished calculations' 'Get back to work!' -i rstudio -u critical")
+    system("paplay /usr/share/sounds/freedesktop/stereo/complete.oga")
+  } else if (Sys.info()["sysname"] == "Darwin") {
+    system(paste("osascript -e", "'", 'display notification "Get back to work!" with title "RStudio" subtitle "Finished calculations" sound name "Hero"', "'"))
+  }
 }
