@@ -3,6 +3,8 @@
 
 <!-- badges: start -->
 
+[![lifecycle](https://img.shields.io/badge/lifecycle-questioning-blue.svg)](https://www.tidyverse.org/lifecycle/#questioning)
+[![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/alfR)](https://cran.r-project.org/package=alfR)
 <!-- badges: end -->
 
 ## Overview
@@ -21,7 +23,8 @@ alfR is an R package with useful misc functions.
 
 <!-- And  -->
 
-The development version from [GitHub](https://github.com/) with:
+The development version can be installed from
+[GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
