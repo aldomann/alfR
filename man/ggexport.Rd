@@ -4,7 +4,8 @@
 \alias{ggexport}
 \title{Simpler ggsave with useful defaults}
 \usage{
-ggexport(filename, size = "medium", dpi = 96, font = NULL, extension = "pdf")
+ggexport(filename, size = "medium", dpi = 96, font = NULL,
+  extension = "pdf")
 }
 \arguments{
 \item{filename}{Destination path of the exported plot}
